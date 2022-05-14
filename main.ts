@@ -3,7 +3,10 @@ namespace SpriteKind {
     export const monter = SpriteKind.create()
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-	
+    while (mySprite.length != 0) {
+        mySprite[0].destroy()
+        mySprite.shift()
+    }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.push(sprites.create(img`
